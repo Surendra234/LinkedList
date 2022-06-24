@@ -156,4 +156,29 @@ public class MyLinkedListTest {
 
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given_search_40_in_linked_list_should_be_deleted_and_show_the_size() {
+
+        System.out.println("\nTest Case 9 : Deleted 40 From The Linked List and Show The Size of Linked List");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> myForthNode = new MyNode<>(40);
+
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode,mySecondNode);
+        myLinkedList.searchAndDelete(myForthNode);
+
+        System.out.println("Size of linked list : " +myLinkedList.size());
+        myLinkedList.printMyNode();
+
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+
+        Assertions.assertTrue(result);
+
+    }
 }

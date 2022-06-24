@@ -92,6 +92,32 @@ public class MyLinkedList {
         }
     }
 
+    // Method to Search and Delete element
+    public void searchAndDelete(INode deleteNode) {
+
+        MyLinkedList node = new MyLinkedList();
+        INode tempNode = head;
+        boolean insert = false;
+        while (tempNode.getNext() != null) {
+            if(tempNode.getKey() == deleteNode.getKey()) {
+                node.pop();
+            }
+            tempNode = tempNode.getNext();
+        }
+    }
+
+    // Method to check the Size
+    public int size() {
+
+        INode tempNode = head;
+        int count = 1;
+        while (tempNode.getNext() != null) {
+            count++;
+            tempNode = tempNode.getNext();
+        }
+        return count;
+    }
+
     //Print Method
     public void printMyNode() {
 
