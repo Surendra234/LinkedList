@@ -38,6 +38,14 @@ public class MyLinkedList {
         }
     }
 
+    // Insert Method
+    public void insert(INode myFirstNode, INode newNode) {
+
+        INode tempNode = myFirstNode.getNext();
+        myFirstNode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
+
     //Print Method
     public void printMyNode() {
 

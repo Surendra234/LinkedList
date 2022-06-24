@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class MyLinkedListTest {
 
+    MyLinkedList myLinkedList = new MyLinkedList();
     @Test
     public void given_3_numbers_when_linked_should_passed_linked_list_test() {
 
@@ -12,8 +13,6 @@ public class MyLinkedListTest {
         MyNode<Integer> myFirstNode = new MyNode<>(70);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(56);
-
-        MyLinkedList myLinkedList = new MyLinkedList();
 
         myLinkedList.add(myFirstNode);
         myLinkedList.add(mySecondNode);
@@ -36,11 +35,30 @@ public class MyLinkedListTest {
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
 
-        MyLinkedList myLinkedList = new MyLinkedList();
-
         myLinkedList.add(myFirstNode);
         myLinkedList.append(mySecondNode);
         myLinkedList.append(myThirdNode);
+
+        myLinkedList.printMyNode();
+
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void given_3_when_append_to_linked_list_one_number_should_be_insert_in_middle() {
+
+        System.out.println("\nTest Case 4 : Ability To Insert 30 Between 56 and 70");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode,mySecondNode);
 
         myLinkedList.printMyNode();
 
