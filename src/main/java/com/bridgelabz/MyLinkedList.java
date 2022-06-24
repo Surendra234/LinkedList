@@ -1,17 +1,42 @@
 package com.bridgelabz;
 
-import java.util.LinkedList;
-
 public class MyLinkedList {
 
-    public static void main(String[] args) {
+    INode head;
+    INode tail;
 
-        LinkedList<Integer> linkedList = new LinkedList<>();
+    public MyLinkedList() {
+        this.head = null;
+        this.tail = null;
+    }
 
-        linkedList.add(56);
-        linkedList.add(30);
-        linkedList.add(70);
+    // Add Method
+    public void add(INode newNode) {
 
-        System.out.println(linkedList.get(0) + " -> " +linkedList.get(1) + " -> " +linkedList.get(2));
+        if(this.head == null)
+            this.head = newNode;
+
+        if(this.tail == null)
+            this.tail = newNode;
+        else {
+            INode tempNode = this.head;
+            this.head = newNode;
+            this.head.setNext(tempNode);
+        }
+    }
+
+    //Print Method
+    public void printMyNode() {
+
+        StringBuffer myNode = new StringBuffer("My Node : ");
+
+        INode tempNode = head;
+        while (tempNode.getNext() != null) {
+            myNode.append(tempNode.getKey());
+            if(!tempNode.equals(tail)) myNode.append("->");
+            tempNode = tempNode.getNext();
+        }
+        myNode.append(tempNode.getKey());
+        System.out.println(myNode +"\n");
     }
 }
