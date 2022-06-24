@@ -27,4 +27,27 @@ public class MyLinkedListTest {
 
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given_3_numbers_when_append_to_linked_list_should_be_added_last() {
+
+        System.out.println("\nTest Case 3 : Ability To Append 30 and 70 To 56");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+
+        myLinkedList.printMyNode();
+
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode) &&
+                myLinkedList.tail.equals(myThirdNode);
+
+        Assertions.assertTrue(result);
+    }
 }

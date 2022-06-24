@@ -25,6 +25,19 @@ public class MyLinkedList {
         }
     }
 
+    // Append Method
+    public void append(INode newNode) {
+
+        if(this.head == null)
+            this.head = newNode;
+        if(this.tail == null)
+            this.tail = newNode;
+        else {
+            this.tail.setNext(newNode);
+            this.tail = newNode;
+        }
+    }
+
     //Print Method
     public void printMyNode() {
 
