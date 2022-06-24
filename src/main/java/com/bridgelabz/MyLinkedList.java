@@ -64,6 +64,20 @@ public class MyLinkedList {
         return this.head;
     }
 
+    // Search Method
+    public boolean search(INode node) {
+
+        INode tempNode = head;
+        boolean found = false;
+        while (tempNode.getNext() != null) {
+            if(tempNode.getKey() == node.getKey()) {
+                found = true;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return found;
+    }
+
     //Print Method
     public void printMyNode() {
 
