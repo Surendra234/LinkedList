@@ -46,6 +46,14 @@ public class MyLinkedList {
         newNode.setNext(tempNode);
     }
 
+    // Pop Method to delete the
+    public INode pop() {
+
+        INode tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
+
     //Print Method
     public void printMyNode() {
 

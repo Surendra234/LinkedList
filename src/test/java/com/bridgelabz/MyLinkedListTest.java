@@ -68,4 +68,25 @@ public class MyLinkedListTest {
 
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void given_3_number_when_append_to_linked_list_first_element_should_be_deleted() {
+
+        System.out.println("\nTest 5 : Ability To Delete First Element");
+        MyNode<Integer> myFirstNode = new MyNode<>(56);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode,mySecondNode);
+        myLinkedList.pop();
+
+        myLinkedList.printMyNode();
+
+        boolean result = myLinkedList.head.equals(mySecondNode) &&
+                myLinkedList.head.getNext().equals(myThirdNode);
+
+        Assertions.assertTrue(result);
+    }
 }
