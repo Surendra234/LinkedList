@@ -78,6 +78,20 @@ public class MyLinkedList {
         return found;
     }
 
+    // Method to Search and Insert the element
+    public void searchAndInsert(INode searchNode, INode insertNode) {
+
+        MyLinkedList node = new MyLinkedList();
+        INode tempNode = head;
+        boolean insert = false;
+        while (tempNode.getNext() != null) {
+            if(tempNode.getKey() == searchNode.getKey()) {
+                node.insert(searchNode,insertNode);
+            }
+            tempNode = tempNode.getNext();
+        }
+    }
+
     //Print Method
     public void printMyNode() {
 
